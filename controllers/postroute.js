@@ -26,7 +26,7 @@ let products=[
     }
 ];
 
-//application.post('/products',
+
 const addproduct=async(req,res)=>{
     const product=req.body;
 
@@ -35,19 +35,19 @@ const addproduct=async(req,res)=>{
     }
     try {
         const newProduct = new Products(product);
-        await newProduct.save(); // Save product to MongoDB
+        await newProduct.save(); 
         return res.status(201).send({ message: "product-added-successfully" });
     } catch (error) {
         console.error("Error while adding product:", error); 
         return res.status(500).send({ message: "Failed to add product", error:error.message });
     }
-        // return res.status(201).send({message:'product-added-successfully'});
+        
 };
 
-//application.post('/products',
+
 const getproducts=async(req,res)=>{
     try {
-        const products = await Products.find(); // Fetch products from MongoDB
+        const products = await Products.find();
         return res.status(200).json(products);
     } catch (error) {
         return res.status(500).send({ message: "Failed to fetch products", error });
@@ -57,7 +57,7 @@ const getproducts=async(req,res)=>{
         const productId = req.params.id;
       
         try {
-          // Use Mongoose's findByIdAndDelete method to delete the product
+         
           const result = await Products.findByIdAndDelete(productId);
       
           if (!result) {
