@@ -1,4 +1,4 @@
-// const mongoose = require("mongoose");
+
 const mongoose=require('mongoose');
 
 
@@ -11,7 +11,7 @@ const productSchema = new mongoose.Schema({
     manufacturingdate: { type: String, required: true }
 });
 
-// module.exports = mongoose.model("Product", productSchema);
+
 
 const Products =mongoose.model('Products',productSchema);
 module.exports=Products;
