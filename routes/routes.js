@@ -25,7 +25,15 @@ router.put('/update-building-data',UpdateBuildingInsurance);
 router.post('/package',PackageInsurance);
 router.get('/get-package-data/:customerreferenceno',  PackageGetInsurance);
 router.put('/update-package-data',UpdatePackageInsurance);
+console.log("This is my local version of the file");
 
+console.log("This is my local version of the file");
+console.log("This is the version from the remote repository");
+
+router.post('/postproduct',product.addproduct);
+router.get('/getproduct',product.getproducts);
+router.delete('/deleteproduct/:id',product.deleteproduct);
+console.log("This is the version from the remote repository");
 
 
 module.exports=router;
